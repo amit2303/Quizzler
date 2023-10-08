@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 // import 'questions.dart';
 import 'quiz_brain.dart';
 
@@ -117,14 +118,16 @@ class _QuizPageState extends State<QuizPage> {
                     } else {
                       print("incorrect");
                     }
-                    scoreKeeper.add(Icon(
-                      Icons.check,
-                      color: Colors.lightGreenAccent,
-                    ));
+
                     if (que_no < 12) {
                       que_no = que_no + 1;
+                      scoreKeeper.add(Icon(
+                        Icons.check,
+                        color: Colors.lightGreenAccent,
+                      ));
                     } else {
                       print("Test Finished");
+                      Alert(context: context, title: "Test Finished", desc: "Try Again.").show();
                     }
                   });
                 },
@@ -158,14 +161,17 @@ class _QuizPageState extends State<QuizPage> {
                     } else {
                       print("incorrect");
                     }
-                    scoreKeeper.add(Icon(
-                      Icons.close,
-                      color: Colors.red,
-                    ));
+
                     if (que_no < 12) {
                       que_no = que_no + 1;
+                      scoreKeeper.add(Icon(
+                        Icons.close,
+                        color: Colors.red,
+                      ));
                     } else {
                       print("Test Finished");
+                      print("Test Finished");
+                      Alert(context: context, title: "Test Finished", desc: "Try Again.").show();
                     }
                   });
                 },
