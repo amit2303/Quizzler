@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'questions.dart';
+import 'questions.dart';
 // import 'quiz_brain.dart';
 
 void main() => runApp(Quizzler());
@@ -29,21 +29,26 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
 
 
+  // //Step-1
+  // //Questions
+  // List<String> questions = [
+  //   "1+1 =4?.",
+  //   "4*3 =12?",
+  //   "India\'s capital is Mumbai."
+  // ];
+  //
+  // //answers
+  // List<bool> answer = [
+  //   false,
+  //   true,
+  //   false];
 
-  //Questions
-  List<String> questions = [
-    "1+1 =4?.",
-    "4*3 =12?",
-    "India\'s capital is Mumbai."
-  ];
-
-  //answers
-  List<bool> answer = [
-    false,
-    true,
-    false];
-
-
+  //Step -2
+List<Question> questionBank = [
+Question('1+1 =4?', false),
+Question('4*3 =12?', true),
+Question('India\'s capital is Mumbai.', false),
+];
 
 
 
@@ -64,7 +69,8 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[que_no],
+                // questions[que_no],   //step -1
+                questionBank[que_no].queText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -90,7 +96,8 @@ class _QuizPageState extends State<QuizPage> {
 
               onPressed: () {
                 setState(() {
-                  bool correctans = answer[que_no];
+                  // bool correctans = answer[que_no];   //Step-1
+                  bool correctans = questionBank[que_no].correctAns;
                   if (correctans == true) {
                     print("correct");
                   } else {
@@ -124,7 +131,8 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 setState(() {
-                  bool correctans = answer[que_no];
+                  // bool correctans = answer[que_no]; //step-1
+                  bool correctans = questionBank[que_no].correctAns;
                   if (correctans == false) {
                     print("correct");
                   } else {

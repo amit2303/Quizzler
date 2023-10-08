@@ -17,11 +17,7 @@ class Question{
 
 
 
-// List<Question> questionBank = [
-// Question('1+1 =4?', false),
-// Question('4*3 =12?', true),
-// Question('India\'s capital is Mumbai.', false),
-// ];
+
 
 
 
