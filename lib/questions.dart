@@ -3,10 +3,7 @@ class Question{
   late String queText;
   late bool correctAns;
 
-  Question(String s,bool a){
-    queText=s;
-    correctAns=a;
-  }
+  Question(this.queText,this.correctAns);
 }
 
 //objects of class
